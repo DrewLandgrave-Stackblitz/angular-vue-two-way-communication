@@ -7,13 +7,15 @@
     <input v-model="text" />
     <button @click="addText">Click me</button>
     <div v-for="t in texts" v-bind:key="t">Text: {{ t }}</div>
+    <div>This is from Angular {{angularMsg}}</div>
   </div>
+  
 </template>
 
 <script>
 export default {
   name: "app",
-  props: ['msg'],
+  props: ['msg', 'angularMsg'],
   data() {
         return {
             text: '',
@@ -23,7 +25,11 @@ export default {
     methods: {
       addText() {
         this.texts.push(this.text);
+        this.$emit('someEvent', this.text);
         this.text = '';
+      },
+      someAngularMethod(value){
+          this.angularMsg = value;
       }
     }
 };

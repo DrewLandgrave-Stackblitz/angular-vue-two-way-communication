@@ -682,12 +682,12 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"8d62966c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=52be0df9&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"border":"3px dashed green","padding":"5px"}},[_vm._v(" I am my-vue-web-comp. "),_c('br'),_vm._v(" Value of \"msg\" prop: "+_vm._s(_vm.msg)+" "),_c('br'),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.text),expression:"text"}],domProps:{"value":(_vm.text)},on:{"input":function($event){if($event.target.composing){ return; }_vm.text=$event.target.value}}}),_c('button',{on:{"click":_vm.addText}},[_vm._v("Click me")]),_vm._l((_vm.texts),function(t){return _c('div',{key:t},[_vm._v("Text: "+_vm._s(t))])})],2)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"8d62966c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=0095e36b&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"border":"3px dashed green","padding":"5px"}},[_vm._v(" I am my-vue-web-comp. "),_c('br'),_vm._v(" Value of \"msg\" prop: "+_vm._s(_vm.msg)+" "),_c('br'),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.text),expression:"text"}],domProps:{"value":(_vm.text)},on:{"input":function($event){if($event.target.composing){ return; }_vm.text=$event.target.value}}}),_c('button',{on:{"click":_vm.addText}},[_vm._v("Click me")]),_vm._l((_vm.texts),function(t){return _c('div',{key:t},[_vm._v("Text: "+_vm._s(t))])}),_c('div',[_vm._v("This is from Angular "+_vm._s(_vm.angularMsg))])],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=52be0df9&
+// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=0095e36b&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=script&lang=js&
 //
@@ -702,9 +702,11 @@ var staticRenderFns = []
 //
 //
 //
+//
+//
 /* harmony default export */ var Appvue_type_script_lang_js_ = ({
   name: "app",
-  props: ['msg'],
+  props: ['msg', 'angularMsg'],
 
   data() {
     return {
@@ -716,7 +718,12 @@ var staticRenderFns = []
   methods: {
     addText() {
       this.texts.push(this.text);
+      this.$emit('someEvent', this.text);
       this.text = '';
+    },
+
+    someAngularMethod(value) {
+      this.angularMsg = value;
     }
 
   }
