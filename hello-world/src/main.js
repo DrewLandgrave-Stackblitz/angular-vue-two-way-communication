@@ -1,8 +1,9 @@
 import Vue from 'vue'
+import wrap from '@vue/web-component-wrapper'
 import App from './App.vue'
 
-Vue.config.productionTip = false
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const CustomElement = wrap(Vue, App);
+Vue.config.productionTip = false;
+
+window.customElements.define('vue-widget', CustomElement);

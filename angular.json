@@ -23,7 +23,9 @@
               "src/assets"
             ],
             "styles": [],
-            "scripts": []
+            "scripts": [
+              "src/custom-elements/my-custom-element.js"
+            ]
           },
           "configurations": {
             "production": {

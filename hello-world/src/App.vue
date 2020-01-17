@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div style="border: 3px dashed green; padding: 5px">
+    I am my-vue-web-comp.
+    <br />
+    Value of "msg" prop: {{ msg }}
+    <br />
+    <input v-model="text" />
+    <button @click="addText">Click me</button>
+    <div v-for="t in texts" v-bind:key="t">Text: {{ t }}</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app",
+  props: ['msg'],
+  data() {
+        return {
+            text: '',
+            texts: []
+        };
+    },
+    methods: {
+      addText() {
+        this.texts.push(this.text);
+        this.text = '';
+      }
+    }
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
