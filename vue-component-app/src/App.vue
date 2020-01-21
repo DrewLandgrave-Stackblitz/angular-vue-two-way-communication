@@ -22,16 +22,16 @@ export default {
             texts: []
         };
     },
-    methods: {
-      addText() {
-        this.texts.push(this.text);
-        this.$emit('someEvent', this.text);
-        this.text = '';
-      },
-      someAngularMethod(value){
-          this.angularMsg = value;
-      }
+  methods: {
+    addText() {
+      this.texts.push(this.text);
+      this.$emit('someEvent', this.text);
+      this.text = '';
+    },
+    someAngularMethod(value){
+        this.angularMsg = value;
     }
+  }
 };
 </script>
 

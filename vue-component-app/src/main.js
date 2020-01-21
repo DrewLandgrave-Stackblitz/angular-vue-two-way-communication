@@ -1,9 +1,8 @@
 import Vue from 'vue'
-import wrap from '@vue/web-component-wrapper'
+
 import App from './App.vue'
+import vueCustomElement from 'vue-custom-element'
+Vue.use(vueCustomElement)
 
 
-const CustomElement = wrap(Vue, App);
-Vue.config.productionTip = false;
-
-window.customElements.define('vue-widget', CustomElement);
+Vue.customElement('vue-widget', App)
