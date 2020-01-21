@@ -1,0 +1,1 @@
+require('custom-elements/my-custom-element.js');
