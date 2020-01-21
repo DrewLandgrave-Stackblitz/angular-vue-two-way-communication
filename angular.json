@@ -24,7 +24,7 @@
             ],
             "styles": [],
             "scripts": [
-
+              "src/custom-elements/my-custom-element.js"
             ]
           },
           "configurations": {
